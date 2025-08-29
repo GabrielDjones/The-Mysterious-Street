@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6aa338207c37f4e49b09926b431e6188
+guid: f063ac31ca0aa2041a083c6653570981
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1494323992150584619
-    second: Pasta_0
+      213: -6100100176563321254
+    second: ET_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pasta_0
+      name: ET_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 203
-        width: 1046
-        height: 746
+        x: 23
+        y: 0
+        width: 1142
+        height: 1141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2daa7be0c7ecb410800000000000000
-      internalID: 1494323992150584619
+      spriteID: a5645a98537185ba0800000000000000
+      internalID: -6100100176563321254
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Pasta_0: 1494323992150584619
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
