@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7f020d649bf376544a05719ace42ab04
+guid: 1d2f7bd043be91c4bbdf55cd0a1110a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4483504832982471387
-    second: pixil-frame-0 (1)_0
+      213: -5621593187482372676
+    second: Mumia_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (1)_0
+      name: Mumia_0
       rect:
         serializedVersion: 2
-        x: 11
+        x: 255
         y: 0
-        width: 574
-        height: 593
+        width: 1090
+        height: 1329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd2daa614eb983e30800000000000000
-      internalID: 4483504832982471387
+      spriteID: cb57b5cc7c61cf1b0800000000000000
+      internalID: -5621593187482372676
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pixil-frame-0 (1)_0: 4483504832982471387
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
