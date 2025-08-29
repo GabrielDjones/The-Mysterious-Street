@@ -7,7 +7,7 @@ public class ChoiceCode : MonoBehaviour
     public Slider slider;
     public float life = 100f;// float pois o jogador não se movimenta no eixo x 0.1 unidades no trecho de um frame
     public float lifeMax = 100f;
-    public float danoPorSegundo = 2f;
+    public float danoPorSegundo = 0.01f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,12 +30,12 @@ public class ChoiceCode : MonoBehaviour
 
     public void LoseSanity()
     {
-        life += 10;
+        life -= 30;
     }
 
     public void SanityGain() 
     {
-       life -= 30;
+       life += 10;
     }
 
 }
