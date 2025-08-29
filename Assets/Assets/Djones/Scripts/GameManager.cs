@@ -7,11 +7,18 @@ public class GameManager : MonoBehaviour
 {
     public GameObject mario;
     public GameObject marioMonstro;
+    public GameObject richard;
+    public GameObject richardMonstro;
+
     public string sceneName;
+    
     NpcInvoker npcInvoker;
+    
     ChoiceCode choiceCode;
+    
     int npc;
     int quantidadeNpc;
+    
     List<int> npcVerify = new List<int> {};
 
     void Start()
@@ -49,33 +56,65 @@ public class GameManager : MonoBehaviour
 
     public void CloseTheDoor()
     {
-        if (npc == 1 || npc == 2)
+        if (npc == 1)
         {
             choiceCode.LoseSanity();
             mario.SetActive(false);
             quantidadeNpc++;
+            TextManager.Instance.CloseText();
         }
-        else if (npc == 3 || npc == 4)
+        else if (npc == 2)
         {
             choiceCode.SanityGain();
             marioMonstro.SetActive(false);
             quantidadeNpc++;
+            TextManager.Instance.CloseText();
+        }
+        else if(npc == 3)
+        {
+            choiceCode.LoseSanity();
+            richard.SetActive(false);
+            quantidadeNpc++;
+            TextManager.Instance.CloseText();
+        }
+        else if (npc == 4) 
+        {
+            choiceCode.SanityGain();
+            richardMonstro.SetActive(false);
+            quantidadeNpc++;
+            TextManager.Instance.CloseText();
         }
     }
 
     public void Candy()
     {
-        if (npc == 1 || npc == 2)
+        if (npc == 1)
         {
             choiceCode.SanityGain();
             mario.SetActive(false);
             quantidadeNpc++;
+            TextManager.Instance.CloseText();
         }
-        else if (npc == 3 || npc == 4)
+        else if (npc == 2)
         {
             choiceCode.LoseSanity();
             marioMonstro.SetActive(false);
             quantidadeNpc++;
+            TextManager.Instance.CloseText();
+        }
+        else if (npc == 3)
+        {
+            choiceCode.SanityGain();
+            richard.SetActive(false);
+            quantidadeNpc++;
+            TextManager.Instance.CloseText();
+        }
+        else if (npc == 4) 
+        {
+            choiceCode.LoseSanity();
+            richardMonstro.SetActive(false);
+            quantidadeNpc++;
+            TextManager.Instance.CloseText();
         }
     }
 

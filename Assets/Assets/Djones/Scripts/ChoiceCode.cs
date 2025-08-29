@@ -30,7 +30,7 @@ public class ChoiceCode : MonoBehaviour
 
     public void LoseSanity()
     {
-        life -= 30;
+        life -= 45;
     }
 
     public void SanityGain() 

@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class NpcInvoker : MonoBehaviour
 {
+    DialogueInvoker dialogueInvoker;
     public GameObject mario;
     public GameObject marioMonstro;
+    public GameObject richard;
+    public GameObject richardMonstro;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        dialogueInvoker = FindAnyObjectByType(typeof(DialogueInvoker)) as DialogueInvoker;
     }
 
     // Update is called once per frame
@@ -18,23 +21,27 @@ public class NpcInvoker : MonoBehaviour
 
     public void NpcChoicer(int x)
     {
-        if (x == 1 || x == 2)
+        if (x == 1)
         {
-            MarioInvoke();
+            mario.SetActive(true);
+            dialogueInvoker.Interact("mario");
         }
-        if(x == 3 || x == 4)
+        else if (x == 2)
         {
-            MarioMonstroInvoke();
+            marioMonstro.SetActive(true);
+            dialogueInvoker.Interact("marioMonstro");
         }
+        else if (x == 3)
+        {
+            richard.SetActive(true);
+            dialogueInvoker.Interact("richard");
+        }
+        else if (x == 4) 
+        {
+            richardMonstro.SetActive(true);
+            dialogueInvoker.Interact("richardMonstro");
+        }
+
     }
-    private void MarioInvoke()
-    {
-        mario.SetActive(true);
-      
-    }
-    private void MarioMonstroInvoke()
-    {
-        marioMonstro.SetActive(true);
-  
-    }
+
 }
