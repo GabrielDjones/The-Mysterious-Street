@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Collections;
+using UnityEngine.SceneManagement;
 public class ChoiceCode : MonoBehaviour
 {
     int npcNumber;
@@ -8,10 +9,12 @@ public class ChoiceCode : MonoBehaviour
     public float life = 100f;// float pois o jogador não se movimenta no eixo x 0.1 unidades no trecho de um frame
     public float lifeMax = 100f;
     public float danoPorSegundo = 0.01f;
+    public string sceneName;
+    public float sceneDelay = 2f;
+    bool hasLost = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-        
+    {    
     }
 
     // Update is called once per frame
@@ -21,12 +24,17 @@ public class ChoiceCode : MonoBehaviour
         slider.value = life;
         slider.maxValue = lifeMax;
         life -= danoPorSegundo * Time.deltaTime;
-        if (life <= 0)
+        if (life <= 0 && hasLost == false)
         {
-            Debug.Log("perdeu");
+            hasLost = true;
+            StartCoroutine(Defeat(sceneDelay));
         }
     }
-    
+    IEnumerator Defeat(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
+    }
 
     public void LoseSanity()
     {

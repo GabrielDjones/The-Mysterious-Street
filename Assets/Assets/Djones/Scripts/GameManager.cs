@@ -2,13 +2,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public GameObject mario;
     public GameObject marioMonstro;
     public GameObject richard;
     public GameObject richardMonstro;
+
+    bool HasVictory = false;
 
     public string sceneName;
     
@@ -18,7 +20,9 @@ public class GameManager : MonoBehaviour
     
     int npc;
     int quantidadeNpc;
-    
+
+    public float sceneDelay = 2f;
+
     List<int> npcVerify = new List<int> {};
 
     void Start()
@@ -30,10 +34,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (quantidadeNpc == 4) 
+        if (quantidadeNpc == 4 && !HasVictory) 
         {
-            sceneManager();
+            Debug.Log("VENCEU");
+            HasVictory = true;
             npcVerify.Clear();
+            StartCoroutine(Victory(sceneDelay));
         }
     }
     private void randomNumber()
@@ -119,8 +125,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void sceneManager()
+    IEnumerator Victory(float delay)
     {
+        Debug.Log("VENCEU");
+        yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
     }
 }
