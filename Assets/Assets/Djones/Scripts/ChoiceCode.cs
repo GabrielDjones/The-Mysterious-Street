@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography.X509Certificates;
 public class ChoiceCode : MonoBehaviour
 {
     int npcNumber;
@@ -12,6 +13,7 @@ public class ChoiceCode : MonoBehaviour
     public string sceneName;
     public float sceneDelay = 2f;
     bool hasLost = false;
+    bool doorOpen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {    
@@ -23,7 +25,12 @@ public class ChoiceCode : MonoBehaviour
         life = Mathf.Clamp(life, 0, lifeMax);// limita a vida para menos q 0 
         slider.value = life;
         slider.maxValue = lifeMax;
-        life -= danoPorSegundo * Time.deltaTime;
+
+        if (doorOpen == true)
+        {
+            life -= danoPorSegundo * Time.deltaTime;
+        }
+        
         if (life <= 0 && hasLost == false)
         {
             hasLost = true;
@@ -46,4 +53,15 @@ public class ChoiceCode : MonoBehaviour
        life += 10;
     }
 
+    public void Door(string porta)
+    {
+        if (porta == "aberta")
+        {
+            doorOpen = true;
+        }
+        if (porta == "fechada")
+        {
+            doorOpen = false;
+        }
+    }
 }

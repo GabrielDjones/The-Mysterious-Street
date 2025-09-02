@@ -52,10 +52,11 @@ public class GameManager : MonoBehaviour
        randomNumber();
         if (npcVerify.Contains(npc))
         {
-            OpenDoor();    
+            OpenDoor();
         }
         npcVerify.Add(npc);
         npcInvoker.NpcChoicer(npc);
+        choiceCode.Door("aberta");
         Debug.Log($"numero final {npc}");
     }
 
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             mario.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
         else if (npc == 2)
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
             choiceCode.SanityGain();
             marioMonstro.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
         else if(npc == 3)
@@ -81,6 +84,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             richard.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
         else if (npc == 4) 
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
             choiceCode.SanityGain();
             richardMonstro.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
     }
@@ -99,6 +104,7 @@ public class GameManager : MonoBehaviour
             choiceCode.SanityGain();
             mario.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
         else if (npc == 2)
@@ -106,6 +112,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             marioMonstro.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
         else if (npc == 3)
@@ -113,6 +120,7 @@ public class GameManager : MonoBehaviour
             choiceCode.SanityGain();
             richard.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
         else if (npc == 4) 
@@ -120,6 +128,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             richardMonstro.SetActive(false);
             quantidadeNpc++;
+            choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
     }
