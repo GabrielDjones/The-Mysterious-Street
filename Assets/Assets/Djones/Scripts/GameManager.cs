@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject richard;
     public GameObject richardMonstro;
 
+    AudioManager musicManager;
+
     bool HasVictory = false;
 
     public string sceneName;
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+       musicManager = FindAnyObjectByType(typeof(AudioManager)) as AudioManager;
        choiceCode = FindAnyObjectByType(typeof(ChoiceCode)) as ChoiceCode;
        npcInvoker = FindAnyObjectByType(typeof(NpcInvoker)) as NpcInvoker;     
     }
@@ -49,15 +52,18 @@ public class GameManager : MonoBehaviour
     }
     public void OpenDoor()
     {
-       randomNumber();
-        if (npcVerify.Contains(npc))
+        if (!HasVictory)
         {
-            OpenDoor();
+            randomNumber();
+            if (npcVerify.Contains(npc))
+            {
+                OpenDoor();
+            }
+            npcVerify.Add(npc);
+            npcInvoker.NpcChoicer(npc);
+            choiceCode.Door("aberta");
+            Debug.Log($"numero final {npc}");
         }
-        npcVerify.Add(npc);
-        npcInvoker.NpcChoicer(npc);
-        choiceCode.Door("aberta");
-        Debug.Log($"numero final {npc}");
     }
 
 
@@ -68,6 +74,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             mario.SetActive(false);
             quantidadeNpc++;
+            musicManager.PlayEffect();
             choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
@@ -84,6 +91,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             richard.SetActive(false);
             quantidadeNpc++;
+            musicManager.PlayEffect();
             choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
@@ -112,6 +120,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             marioMonstro.SetActive(false);
             quantidadeNpc++;
+            musicManager.PlayEffect();
             choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }
@@ -128,6 +137,7 @@ public class GameManager : MonoBehaviour
             choiceCode.LoseSanity();
             richardMonstro.SetActive(false);
             quantidadeNpc++;
+            musicManager.PlayEffect();
             choiceCode.Door("fechada");
             TextManager.Instance.CloseText();
         }

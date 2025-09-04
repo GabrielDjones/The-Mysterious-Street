@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Security.Cryptography.X509Certificates;
+using UnityEngine.Events;
 public class ChoiceCode : MonoBehaviour
 {
     int npcNumber;

@@ -38,10 +38,7 @@ public class TextManager : MonoBehaviour
                 {
                     StartCoroutine(TypeLine(lines[currentLine]));
                 }
-                else
-                {
-                    dialogueBox.SetActive(false);
-                }
+
             }
         }
     }
